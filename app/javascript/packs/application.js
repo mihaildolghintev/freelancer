@@ -11,6 +11,14 @@ import Noty from "noty";
 
 window.Noty = Noty;
 
+$(() => {
+  $(".toggle").on("click", (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    $("#" + e.target.getAttribute("aria-controls")).toggleClass("is-hidden");
+  });
+});
+
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
